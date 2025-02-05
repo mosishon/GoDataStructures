@@ -50,7 +50,7 @@ func main() {
 	// each double linked list has a head, a tail pointer and a size with size 8 bytes each = 24 bytes
 	// each double linked node has a data with size X and a next, prev pointer with size 8 bytes each = X + 16 bytes
 
-	// for 100_000_000 items of int64 type (8 bytes) we will have
+	// for 1_000_000 items of int64 type (8 bytes) we will have
 	// SingleLinkedList: 16 + 1_000_000 * (8 + 8) = 16 + 16_000_000 = 16_000_016 bytes = 16 MB
 	// DoubleLinkedList: 24 + 1_000_000 * (8 + 16) = 24 + 24_000_000 = 24_000_024 bytes = 24 MB
 	// 24/16 = 1.5 times more memory usage for DoubleLinkedList
