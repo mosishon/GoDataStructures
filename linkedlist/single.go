@@ -55,13 +55,16 @@ func (l *SingleLinkedList[T]) ItemAt(index int) (T, error) {
 }
 
 // Range یک کانال برمی‌گرداند که تمام مقادیر لیست را یکی‌یکی ارسال می‌کند.
+// this code has a problem with memory usage
+// if outer loop does not read all the values from the channel
+// channel will be blocked and goroutine will be leaked
 func (n *SingleLinkedList[T]) Range() <-chan T {
 	ch := make(chan T)
 	go func() {
+		defer close(ch) // بعد از ارسال همه داده‌ها، کانال را ببند
 		for current := n.Head; current != nil; current = current.Next {
 			ch <- current.Data // مقدار نود فعلی را به کانال ارسال کن
 		}
-		close(ch) // بعد از ارسال همه داده‌ها، کانال را ببند
 	}()
 	return ch
 }
