@@ -64,7 +64,7 @@ func (l *DoubleLinkedList[T]) ItemAt(index uint) (T, error) {
 
 // Range یک کانال برمی‌گرداند که تمام مقادیر لیست را از ابتدا به انتها ارسال می‌کند.
 func (n *DoubleLinkedList[T]) Range() <-chan T {
-	ch := make(chan T)
+	ch := make(chan T, n.Size)
 	go func() {
 		for current := n.Head; current != nil; current = current.Next {
 			ch <- current.Data // مقدار نود فعلی را به کانال ارسال کن
