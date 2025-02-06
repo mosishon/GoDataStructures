@@ -44,12 +44,8 @@ func BinarySearchTreeTest() {
 	// for 1_000_000 items of int64 type (8 bytes) we will have
 	// BinarySearchTree: 8 + 1_000_000 * (8 + 16) = 8 + 24_000_000 = 24_000_008 bytes = 24 MB
 
-	// --*-----*----------*-----------*------------*----------*----------*---------*
+	// ----*-----*----------*----------*-----------*---------*---------*--------*
 
-	// BinarySearchTreeTest performs a test on the BinarySearchTree implementation.
-	// It inserts a large number of items into the tree and then performs random
-	// searches to measure the performance of these operations.
-	//
 	// The time complexity of the Insert operation in a Binary Search Tree (BST) is
 	// O(log n) on average, but it can degrade to O(n) in the worst case if the tree
 	// becomes unbalanced.
@@ -60,6 +56,6 @@ func BinarySearchTreeTest() {
 	//
 	// The test inserts 1,000,000 items into the BST and then performs 5,000 random
 	// searches, measuring the time taken for each operation.
-	// --*-----*----------*-----------*------------*----------*----------*---------*
+	// ----*-----*----------*----------*-----------*---------*---------*--------*
 
 }
