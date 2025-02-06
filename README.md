@@ -5,7 +5,7 @@ This repository contains pure implementations of various data structures in Go. 
 ## Supported Data Structures
 
 - linkedlist
-- tree(TODO)
+- tree
 - And more ...
 
 ## Why This Project?
